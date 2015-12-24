@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Are You Skrewed?</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Are You Skrewed?">
+  <meta name="author" content="Jeffrey Bailes">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Are You Skrewed?</h1>
+    <h2>How far can you get on your tank of petrol.</h2>
+    <p>Jeffrey Bailes<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Usage Scenario</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>How often have you driven down the highway, in the middle of no-where and suddenly thought to yourself &quot;Haven&#39;t filled up in a while, I wonder if I&#39;m skrewed.&quot;?
+If your answer was &quot;Most days&quot;, then this is the webapp for you!</p>
+
+<p>Using details that everyone has at the forefront of their minds, car&#39;s transmission, car&#39;s mass, car&#39;s kilowatt output, time it takes to drive 402 metres and how many litres of fuel the car has, we can &#39;accurately&#39; predict how far you can drive.</p>
+
+<p>As you will see, the app also gives you helpful hints in the case that you are skrewed.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Screenshot of the app</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="AreYouSkrewed.png" alt="Screenshot"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Under the hood</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The prediction function uses the mtcars dataset with <code>lm</code>, trained on transmission, weight, horsepower and quater-mile time.</p>
+
+<pre><code class="r">fit &lt;- lm(mpg ~ transmission + wt + hp + qsec, data=mtcars)
+</code></pre>
+
+<p>Then reads in the given values to calculate the expected distance you can drive for.
+For example:</p>
+
+<pre><code class="r">milesTokm(litreToGallon(5) * predict(fit, data.frame(transmission=&quot;manual&quot;,
+                                                     wt=kgToThouPound(1000),
+                                                     hp=kwToHP(110),
+                                                     qsec=18)))
+</code></pre>
+
+<pre><code>##        1 
+## 53.59918
+</code></pre>
+
+<p>So with 5 litres of petrol, you can drive <code>53.6</code>km.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>The Real Draw-card.</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This final part is what really makes the app.
+You get suggestions on what to do if you are in fact skrewed!</p>
+
+<p>Suggestions to increase efficiency include (among others):</p>
+
+<ul>
+<li>Changing your car from automatic to manual before you continue.</li>
+<li>Destroying your engine a bit with a hammer so that your car outputs less kilowatts.</li>
+</ul>
+
+<p>This app is even smart enough to realise what happens when your car gets ludicrously heavy.
+Indeed, a manual car of <code>8</code> tonnes (<code>8 000</code>kg), with a <code>110</code>kw engine, <code>18</code> second 402 metre time will make it to a petrol station <code>50</code>km away.
+As the app correctly points out, you can make it, though you have to do it in reverse the whole way (try it for yourself!).</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Usage Scenario'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Screenshot of the app'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Under the hood'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='The Real Draw-card.'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
