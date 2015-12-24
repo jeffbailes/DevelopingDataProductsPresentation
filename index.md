@@ -1,7 +1,7 @@
 ---
-title       : Are You Skrewed?
+title       : Are You Screwed?
 subtitle    : How far can you get on your tank of petrol.
-author      : Jeffrey Bailes
+author      : Jeff Bailes
 job         : 
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
@@ -12,17 +12,17 @@ knit        : slidify::knit2slides
 ---
 
 ## Usage Scenario
-How often have you driven down the highway, in the middle of no-where and suddenly thought to yourself "Haven't filled up in a while, I wonder if I'm skrewed."?
+How often have you driven down the highway, in the middle of no-where and suddenly thought to yourself "Haven't filled up in a while, I wonder if I'm screwed."?
 If your answer was "Most days", then this is the webapp for you!
 
 Using details that everyone has at the forefront of their minds, car's transmission, car's mass, car's kilowatt output, time it takes to drive 402 metres and how many litres of fuel the car has, we can 'accurately' predict how far you can drive.
 
-As you will see, the app also gives you helpful hints in the case that you are skrewed.
+As you will see, the app also gives you helpful hints in the case that you are screwed.
 
 --- .class #id 
 
 ## Screenshot of the app
-![Screenshot](AreYouSkrewed.png)
+![Screenshot](AreYouScrewed.png)
 
 ---
 
@@ -53,7 +53,7 @@ So with 5 litres of petrol, you can drive `53.6`km.
 
 ## The Real Draw-card.
 This final part is what really makes the app.
-You get suggestions on what to do if you are in fact skrewed!
+You get suggestions on what to do if you are in fact screwed!
 
 Suggestions to increase efficiency include (among others):
 
